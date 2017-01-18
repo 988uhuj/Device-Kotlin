@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Device</string>
+
+    <string name="size">Size</string>
+    <string name="resolution">Resolution</string>
+    <string name="dpi">DPI</string>
+    <string name="x_dpi">X-DPI</string>
+    <string name="y_dpi">Y-DPI</string>
+    <string name="density">Density</string>
+    <string name="status_height">StatusBar Height</string>
+    <string name="navigation_height">NavigationBar Height</string>
+    <string name="ip">IP</string>
+    <string name="connect_type">Connect Type</string>
+    <string name="memory">Memory</string>
+    <string name="max_memory">MaxMemory</string>
+    <string name="total_memory">TotalMemory</string>
+    <string name="free_memory">FreeMemory</string>
+    <string name="cpu_count">CPU Count</string>
+    <string name="system_version">SystemVersion</string>
+    <string name="device_id">Device ID</string>
+    <string name="brand">Brand</string>
+    <string name="model">Model</string>
+    <string name="abi">ABI</string>
+    <string name="system">System</string>
+    <string name="sd">SD</string>
+    <string name="basic">Basic</string>
+    <string name="screen">Screen</string>
+    <string name="net">Net</string>
+    <string name="storage">Storage</string>
+</resources>
