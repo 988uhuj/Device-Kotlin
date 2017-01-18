@@ -3,6 +3,9 @@ An Android Application for viewing device information using Kotlin.
 
 <a href='https://play.google.com/store/apps/details?id=com.chenupt.device&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="240"/></a>
 
+# Screenshot
+<img src="./screenshot/device-1.0-1.png" width="160"/> <img src="./screenshot/device-1.0-2.png" width="160"/> <img src="./screenshot/device-1.0-3.png" width="160"/> 
+
 # License
 Copyright 2017 chenupt
 
