@@ -17,8 +17,10 @@
 package com.chenupt.device.ui
 
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.provider.Settings
 import android.support.v7.widget.RecyclerView
 import android.text.format.DateFormat
@@ -33,7 +35,7 @@ import kotlinx.android.synthetic.main.vh_package.view.*
 /**
  * Created by chenupt on 16/4/19.
  */
-class PackageVH(itemView : View) : RecyclerView.ViewHolder(itemView) {
+class PackageVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     lateinit var pkg: PackageInfo
 
@@ -44,17 +46,18 @@ class PackageVH(itemView : View) : RecyclerView.ViewHolder(itemView) {
     }
 
     init {
-        itemView.container.setOnClickListener{ toAppInfo() }
+        itemView.container.setOnClickListener { toAppInfo() }
     }
 
     fun bindData(pkg: PackageInfo) {
         this.pkg = pkg
         itemView.tvTitle.text = "${pkg.appName} (${pkg.versionName})"
         itemView.tvContent.text = pkg.packageName
-
+        itemView.tvTargetVersion.text = getTargetSdkVersion(itemView.context, pkg.packageName)
         itemView.tvSize.text = "${DateFormat.format("yyyy-MM-dd HH:mm:ss", pkg.installTime)}" +
                 "   ${android.text.format.Formatter.formatFileSize(itemView.context, pkg.size)}"
         //        itemView.ivIcon.setImageDrawable(itemView.context.packageManager.getApplicationIcon(pkg.title))
+
         Glide.with(itemView.context).load("").placeholder(itemView.context.packageManager.getApplicationIcon(pkg.packageName)).into(itemView.ivIcon)
     }
 
@@ -68,5 +71,19 @@ class PackageVH(itemView : View) : RecyclerView.ViewHolder(itemView) {
         }
     }
 
+    fun getTargetSdkVersion(context: Context, packageName: String?): String {
+        try {
+            val applicationInfo = context.packageManager.getApplicationInfo(packageName, 0)
+            if (applicationInfo != null) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    return "targetVersion: ${applicationInfo.targetSdkVersion}, minVersion: ${applicationInfo.minSdkVersion}"
+                }
+                return "targetVersion: ${applicationInfo.targetSdkVersion}"
+            }
+        } catch(e: Exception) {
+            e.printStackTrace()
+        }
+        return "unknown"
+    }
 }
 

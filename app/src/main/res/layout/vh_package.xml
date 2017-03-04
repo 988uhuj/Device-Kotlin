@@ -46,19 +46,28 @@
             style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:singleLine="true"
+            android:maxLines="1"
             android:ellipsize="end"
-            android:text="IP" />
+            tools:text="IP" />
+
+        <TextView
+            android:id="@+id/tvTargetVersion"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:ellipsize="end"
+            tools:text="targetVersion"
+            android:textColor="#999" />
 
         <TextView
             android:id="@+id/tvContent"
             style="@style/TextAppearance.AppCompat.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="2dp"
-            android:singleLine="true"
+            android:maxLines="1"
             android:ellipsize="end"
-            android:text="123"
+            tools:text="123"
             android:textColor="#999" />
 
         <TextView
@@ -66,7 +75,7 @@
             style="@style/TextAppearance.AppCompat.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="123"
+            tools:text="123"
             android:textColor="#999" />
 
     </LinearLayout>

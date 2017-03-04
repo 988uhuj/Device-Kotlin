@@ -21,6 +21,7 @@
     <string name="brand">Brand</string>
     <string name="model">Model</string>
     <string name="abi">ABI</string>
+    <string name="java_version">JavaVersion</string>
     <string name="system">System</string>
     <string name="sd">SD</string>
     <string name="basic">Basic</string>
